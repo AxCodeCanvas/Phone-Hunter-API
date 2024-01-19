@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Hunter</title>
+    <!-- tailwind css -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- daisyUi -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.6.0/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body>
+    <header>
+        <h1 class="text-5xl font-bold mt-10 text-gray-600 flex justify-center">Phone Hunter API </h1>
+    </header>
+    <main class="container mx-auto mt-10">
+        <!-- search section -->
+        <section class="bg-pink-200 rounded-lg">
+            <input type="text" placeholder="search..." id="input-text"
+                class="m-2 text-xl input input-bordered input-accent w-full max-w-xs" />
+            <button onclick="handelSearch()" class="btn btn-active btn-accent">Accent</button>
+        </section>
+
+        <!-- phone card container -->
+        <section>
+            <!-- toggle Handle Spinner  -->
+            <div id="handel-spinner" class="hidden">
+                <div class="my-40 flex justify-center ">
+                    <span class="loading loading-spinner text-primary loading-lg"></span>
+                </div>
+            </div>
+            <!-- phone card -->
+            <div id="phone-container" class="grid grid-cols-3 gap-6 mt-5">
+            </div>
+
+            <!-- show all button -->
+            <div class="flex justify-end m-10">
+                <div id="show-all-container" class="hidden">
+                    <button onclick="handleShowAll()" class="btn glass text-white bg-lime-500 hover:bg-blue-600">Show
+                        All</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Show Details Modal -->
+        <!-- Open the modal using ID.showModal() method -->
+        <dialog id="show_details_modal" class="modal modal-bottom sm:modal-middle">
+            <div class="modal-box">
+                <h3 id="show-details-phone-name" class="font-bold text-lg"></h3>
+                <div id="show-detail-container" class="p-3 rounded-lg bg-neutral-400 text-black">
+                    
+                </div>
+                <div class="modal-action">
+                    <form method="dialog">
+                        <!-- if there is a button in form, it will close the modal -->
+                        <button class="btn bg-red-700 text-white">Close</button>
+                    </form>
+                </div>
+            </div>
+        </dialog>
+
+
+    </main>
+
+
+
+    <!-- JavaScript -->
+    <script src="hunter.js"></script>
+</body>
+
+</html>
